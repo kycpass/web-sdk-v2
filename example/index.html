@@ -1,0 +1,59 @@
+<body>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+      color: #1b46ff;
+      padding-left: 150px;
+      font-family: monospace;
+    }
+    #sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 150px;
+      height: 100%;
+      background: #06103b;
+    }
+    #footer {
+      padding: 30px;
+      background: #f2f2f2;
+    }
+    #header {
+      text-align: center;
+      height:30px;
+      background: #06103b;
+      padding: 30px;
+      font-size:24px;
+    }
+  </style>
+  <div>
+    <div id="sidebar"></div>
+    <div id="header">
+        Entify SDK demo implementation
+    </div>
+    <div id="example"></div>
+    <div style="padding:20px;">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+    </div>
+    <div id="footer">Check source on <a target="_blank" href="https://github.com/kycpass/web-sdk-v2">github</a></div>
+  </div>
+</body>
+
+<script type="text/javascript">
+    const token = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcklkIjoxLCJqdGkiOiJjMTM4NzkzOS1lODA5LTQzNTktOTQwZi1kNTNjNGIwZWVhNzkiLCJiYXNlVXJsIjoiaHR0cHM6Ly9zdGFnaW5nYXBpLmt5Yy1wYXNzLmNvbS92MSIsInNpbmdsZVVzZSI6ZmFsc2UsImlhdCI6MTU3NzgwNDE5MCwiZXhwIjoxNTc4NDA4OTkwfQ.htcQFr31VsC0s_ZMQJb--qkf20I_LJlQYgqo_CEUPM8`;
+
+    const onLoadHandler = () => {
+      console.log('frame load finished');
+    }
+
+    entify.mount({
+      containerId: "example",
+      token: token,
+      onSuccess: () => console.log('SDK flow completed'),
+      onError: err => console.error('ERROR from SDK',err),
+      onLoad: onLoadHandler,
+      height: 200 // opptional
+    })
+</script>
