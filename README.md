@@ -97,3 +97,4 @@ For example, in production build, the sdk will try to load iframe from the follo
 ```
 <frame_url>/v2/?token=<token>
 ```
+Check out codebase of the [sdk frame](https://github.com/kycpass/web-sdk-frame)
