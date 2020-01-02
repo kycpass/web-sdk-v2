@@ -98,3 +98,8 @@ For example, in production build, the sdk will try to load iframe from the follo
 <frame_url>/v2/?token=<token>
 ```
 Check out codebase of the [sdk frame](https://github.com/kycpass/web-sdk-frame)
+
+---
+
+### How it works behind the scene?
+![arch](https://raw.githubusercontent.com/kycpass/web-sdk-v2/master/arch.png?token=AE23SBL6UCJHJGQDJA5EY5S6C43ZG)
