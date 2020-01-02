@@ -2,7 +2,7 @@
 
 The Entify SDK allows you to embade entify verification functionality to your website seamlessly.
 
-Check how it works - [DEMO](https://web-sdk-v2.herokuapp.com/)
+[DEMO](https://web-sdk-v2.herokuapp.com/)
 
 ## Prerequisite
 
