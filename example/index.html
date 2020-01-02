@@ -42,7 +42,7 @@
 </body>
 
 <script type="text/javascript">
-    const token = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcklkIjoxLCJqdGkiOiJjMTM4NzkzOS1lODA5LTQzNTktOTQwZi1kNTNjNGIwZWVhNzkiLCJiYXNlVXJsIjoiaHR0cHM6Ly9zdGFnaW5nYXBpLmt5Yy1wYXNzLmNvbS92MSIsInNpbmdsZVVzZSI6ZmFsc2UsImlhdCI6MTU3NzgwNDE5MCwiZXhwIjoxNTc4NDA4OTkwfQ.htcQFr31VsC0s_ZMQJb--qkf20I_LJlQYgqo_CEUPM8`;
+    const token = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcklkIjoxLCJqdGkiOiI0NjEwOGYzMC1lMTAyLTQzMTQtYjIxZC01MTRjZjdhOTk5NTgiLCJiYXNlVXJsIjoiaHR0cHM6Ly9zdGFnaW5nYXBpLmt5Yy1wYXNzLmNvbS92MSIsInNpbmdsZVVzZSI6ZmFsc2UsImlhdCI6MTU3Nzk3MDY4NiwiZXhwIjoxNTc4NTc1NDg2fQ.hDad2FReLKaosW1l2fX0CIEQqyAjcqi1j4Er3qtsows`;
 
     const onLoadHandler = () => {
       console.log('frame load finished');
@@ -51,8 +51,8 @@
     entify.mount({
       containerId: "example",
       token: token,
-      onSuccess: () => console.log('SDK flow completed'),
-      onError: err => console.error('ERROR from SDK',err),
+      onSuccess: () => alert('SDK flow completed'),
+      onError: err => alert('ERROR from SDK - '+err.message),
       onLoad: onLoadHandler,
       height: 200 // opptional
     })
