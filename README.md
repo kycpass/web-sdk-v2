@@ -41,7 +41,7 @@ Once you've included the script tag in your HTML file and have your token, it is
 
 ```javascript
 window.entify.mount({
-  onLoad: () => ()=> console.log("The SDK is loaded"), // optional - callback function for when the SDK interface is loaded to your website
+  onLoad: ()=> console.log("The SDK is loaded"), // optional - callback function for when the SDK interface is loaded to your website
   onSuccess: () => console.log("The SDK flow has completed!"), // optional - callback function for when the verification request has been submitted
   onError: err => console.error(err), // optional - callback function for when the SDK encounters an irrecoverable error
   token: "eyJhbG...", // required - the token you retrieve in step 2.
