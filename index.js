@@ -4,7 +4,8 @@ let iFrame;
 //fallback handlers
 const eventHandlers = {
   onSuccess: () => console.log('No success handler found!'),
-  onError: (err) => console.error('ERROR', err)
+  onError: (err) => console.error('ERROR', err),
+  setHeight: (data) => setHeight(data.height)
 }
 
 const mount = (params) => {
@@ -63,11 +64,7 @@ const sendToIframe = ({ eventType, data, targetOrigin = '*' }) =>{
 }
 
 const setupListeners = (eventHandlers) => {
-  window.addEventListener('message', ({data: { eventType, data }}) => {
-    // NOTE: check if it's a setheight event
-    if(eventType == 'setHeight') {
-      setHeight(data.height);
-    }
+  window.addEventListener('message', ({data: { eventType, data }}) => {    
     // expecting an eventType < onSuccess|onError > from sdk frame
     const handler = eventHandlers[eventType];
     handler && handler(data);
