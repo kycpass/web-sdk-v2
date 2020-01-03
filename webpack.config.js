@@ -2,13 +2,14 @@ const webpack = require('webpack');
 const path = require('path');
 var dotenv = require('dotenv').config();
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { version } = require('./package.json');
 
 module.exports = {
     mode: 'production',
     entry: './index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
+        filename: `web-sdk-${version}.js`,
         libraryTarget: 'umd',
         library:'entify',
         libraryExport: 'default'
