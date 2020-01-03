@@ -1,13 +1,12 @@
-const SDKFrameUrl = (token) => {
-  if(process.env.NODE_ENV == 'development') {
-    return `${FRAME_URL}/?token=${token}`
-  }else {
-    return getSDKFrameProdURL(token)
-  }
-}
+const SDKFrameUrl = (token) => (
+  process.env.NODE_ENV == 'development' ?
+  `${FRAME_URL}/?token=${token}`
+  :
+  getSDKFrameProdURL(token)
+)
 
 const getSDKFrameProdURL = (token) => {
-  const majorVersion = ENFY_VERISON.split('.')[0];
+  const [ majorVersion ] = ENFY_VERISON.split('.');
   const folder = `v${majorVersion}`
   return `${FRAME_URL}/${folder}/?token=${token}`
 }

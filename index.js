@@ -32,24 +32,24 @@ const mount = (params) => {
   }
 
   const iFrameId = `${containerId}--sdk-iframe`;
-
-  iFrameContainer.innerHTML = `<iframe
-      id="${iFrameId}"
-      width="100%"
-      height="${height}"
-      src=${SDKFrameUrl(token)}
-      style="border: 0px;">
-  </iframe>`
-
-  iFrame = document.getElementById(iFrameId);
-  iFrame.onload = () => {
-    onLoad && onLoad();
-  }
+  iFrame = getiFrame({iFrameId, height, token, onLoad});
+  iFrameContainer.appendChild(iFrame);
 
   setupListeners(eventHandlers);
 }
 
-//helper funcrions
+//helper function
+
+const getiFrame = ({iFrameId, height, token, onLoad}) => {
+    const ifrm = document.createElement('iframe');
+    ifrm.setAttribute('id', iFrameId);
+    ifrm.setAttribute('src', SDKFrameUrl(token));
+    ifrm.style.width = '100%';
+    ifrm.style.height = height;
+    ifrm.style.border = '0px';
+    ifrm.onload = onLoad && onLoad();
+    return ifrm
+}
 
 const sendToIframe = ({ eventType, data, targetOrigin = '*' }) =>{
   if(!iFrame) {
