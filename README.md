@@ -1,8 +1,8 @@
 # Entify Web SDK (v2)
 
-The Entify SDK allows you to embade entify verification functionality to your website seamlessly.
+The Entify SDK allows seamless 1 step frontend integration with your website. 
 
-Check how it works - [DEMO](https://web-sdk-v2.herokuapp.com/)
+[DEMO](https://web-sdk-v2.herokuapp.com/)
 
 ## Prerequisite
 
@@ -41,7 +41,7 @@ Once you've included the script tag in your HTML file and have your token, it is
 
 ```javascript
 window.entify.mount({
-  onLoad: () => ()=> console.log("The SDK is loaded"), // optional - callback function for when the SDK interface is loaded to your website
+  onLoad: ()=> console.log("The SDK is loaded"), // optional - callback function for when the SDK interface is loaded to your website
   onSuccess: () => console.log("The SDK flow has completed!"), // optional - callback function for when the verification request has been submitted
   onError: err => console.error(err), // optional - callback function for when the SDK encounters an irrecoverable error
   token: "eyJhbG...", // required - the token you retrieve in step 2.
@@ -98,3 +98,8 @@ For example, in production build, the sdk will try to load iframe from the follo
 <frame_url>/v2/?token=<token>
 ```
 Check out codebase of the [sdk frame](https://github.com/kycpass/web-sdk-frame)
+
+---
+
+### How it works behind the scene?
+![arch](https://raw.githubusercontent.com/kycpass/web-sdk-v2/master/arch.png?token=AE23SBL6UCJHJGQDJA5EY5S6C43ZG)
