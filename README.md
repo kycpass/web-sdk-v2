@@ -14,7 +14,7 @@ Before you start integrating with the Entify SDK, make sure that you:
 ### Installation
 
 ```
-<script src="https://cdn.kyc-pass.com/web-sdk-<version>.js"></script>
+<script src="http://sdk.entifyme.com/web-sdk-0.0.2.js"></script>
 ```
 
 1. Import the Entify SDK script to your webpage.
