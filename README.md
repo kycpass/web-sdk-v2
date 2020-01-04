@@ -1,6 +1,6 @@
 # Entify Web SDK (v2)
 
-The Entify SDK allows seamless 1 step frontend integration with your website. 
+The Entify JS SDK allows 1 step frontend integration with your website. 
 
 [DEMO](https://web-sdk-v2.herokuapp.com/)
 
