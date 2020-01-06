@@ -1,6 +1,6 @@
 {
   "name": "iframe_host",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "scripts": {
     "build": "webpack",
     "dev": "webpack --watch --config ./webpack.dev.config.js",
