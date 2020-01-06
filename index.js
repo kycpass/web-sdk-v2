@@ -72,7 +72,7 @@ const setupListeners = (eventHandlers) => {
 }
 
 const setHeight = (height) =>{
-  iFrame.style.height = height
+  iFrame.style.height = `${height}px`;
 }
 
 
