@@ -4,7 +4,7 @@ The Entify JS SDK allows 1 step frontend integration with your website.
 
 [DEMO](https://web-sdk-v2.herokuapp.com/)
 
-## Prerequisite
+### Prerequisite
 
 Before you start integrating with the Entify SDK, make sure that you:
 
@@ -72,6 +72,7 @@ Here's a sample of the object that will passed to your `onSuccess` callback:
 ```
 ---
 ## Local development
+> Only for development  
 
 Create a `.env` file with the following variables:
 
@@ -80,7 +81,7 @@ FRAME_URL= # entify sdk frame url without trailing slash
 ```
 Make sure your frame url is accessible and assigned to `FRAME_URL`.
 
-## Available scripts  
+### Available scripts  
 
 For development: 
 ```
