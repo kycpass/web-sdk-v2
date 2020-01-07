@@ -44,10 +44,12 @@ const mount = (params) => {
 const getiFrame = ({iFrameId, height, token, onLoad}) => {
     const ifrm = document.createElement('iframe');
     ifrm.setAttribute('id', iFrameId);
+    ifrm.setAttribute('allow', 'microphone; camera');
     ifrm.setAttribute('src', SDKFrameUrl(token));
     ifrm.style.width = '100%';
     ifrm.style.height = `${height}px`;
     ifrm.style.border = '0px';
+
     ifrm.onload = onLoad && onLoad();
     return ifrm
 }
