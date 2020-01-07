@@ -14,7 +14,7 @@ Before you start integrating with the Entify SDK, make sure that you:
 ### Installation
 
 ```
-<script src="http://sdk.entifyme.com/web-sdk-1.0.0.js"></script>
+<script src="https://sdk.entifyme.com/web-sdk-1.0.0.js"></script>
 ```
 
 1. Import the Entify SDK script to your webpage.
