@@ -1,11 +1,13 @@
 import SDKFrameUrl from './frameUrl';
 let iFrame;
+let prefillData;
 
 //fallback handlers
 const eventHandlers = {
   onSuccess: () => console.log('No success handler found!'),
   onError: (err) => console.error('ERROR', err),
-  setHeight: (data) => setHeight(data.height)
+  setHeight: (data) => setHeight(data.height),
+  prefillInputForm: (data) => sendPrefillData(data)
 }
 
 const mount = (params) => {
@@ -17,6 +19,9 @@ const mount = (params) => {
     height = 400,
     token
   } = params;
+
+  //to be send later when iframe is ready
+  prefillData = params.prefillData;
 
   if(onSuccess) {
     eventHandlers.onSuccess = onSuccess
@@ -73,10 +78,16 @@ const setupListeners = (eventHandlers) => {
   })
 }
 
-const setHeight = (height) =>{
+const setHeight = (height) => {
   iFrame.style.height = `${height}px`;
 }
 
+const sendPrefillData = (data) => {
+  sendToIframe({
+    eventType: 'prefillInputForm',
+    data
+  })
+}
 
 console.log(`Entify SDK version: ${ENFY_VERISON}`);
 
