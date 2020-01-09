@@ -1,8 +1,14 @@
 const webpack = require('webpack');
 const path = require('path');
-var dotenv = require('dotenv').config();
+const dotenv = require('dotenv').config();
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CreateFileWebpack = require('create-file-webpack')
 const { version } = require('./package.json');
+
+const latestVersionStr = JSON.stringify({
+  version,
+  src: `${process.env.SELF_URL}/web-sdk-${version}.js`
+}, null, 4)
 
 module.exports = {
     mode: 'production',
@@ -21,6 +27,11 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
           template: './example/index.html'
+        }),
+        new CreateFileWebpack({
+            path: path.resolve(__dirname, 'dist'),
+            fileName: 'version.json',
+            content: latestVersionStr
         })
     ]
 };
