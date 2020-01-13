@@ -83,15 +83,15 @@ Legal entity name, Registration code, Country, Representative first name & Repre
 Example: 
 ```
 config: {
-        prefill: {
-          legalEntityName: 'Entifyme',
-          registrationCode: '111-111-111',
-          residenceCountry: 'US',
-          residenceState: 'AL',
-          representativeFirstName: 'Alice',
-          representativeLastName: 'Bob'
-        }
-      }
+  prefill: {
+    legalEntityName: 'Entifyme',
+    registrationCode: '111-111-111',
+    residenceCountry: 'US',
+    residenceState: 'AL',
+    representativeFirstName: 'Alice',
+    representativeLastName: 'Bob'
+  }
+}
 ```
 
 ---
