@@ -92,7 +92,7 @@ npm run dev
 
 For production build: 
 ```
-npm run bundle
+npm run build
 ```
 
 **NOTE:** In production build, the `NODE_ENV` is set to `production`. It appends the version no to the frame url.  
