@@ -1,13 +1,13 @@
 import SDKFrameUrl from './frameUrl';
 let iFrame;
-let prefillData;
+let sdkConfig;
 
 //fallback handlers
 const eventHandlers = {
   onSuccess: () => console.log('No success handler found!'),
   onError: (err) => console.error('ERROR', err),
   setHeight: (data) => setHeight(data.height),
-  prefillInputForm: (data) => sendPrefillData(data)
+  sendSdkConfig: () => sendSdkConfig(sdkConfig)
 }
 
 const mount = (params) => {
@@ -21,7 +21,7 @@ const mount = (params) => {
   } = params;
 
   //to be send later when iframe is ready
-  prefillData = params.prefillData;
+  sdkConfig = params.sdkConfig || {};
 
   if(onSuccess) {
     eventHandlers.onSuccess = onSuccess
@@ -63,7 +63,6 @@ const sendToIframe = ({ eventType, data, targetOrigin = '*' }) =>{
   if(!iFrame) {
     throw new Error(`Your frame is not loaded yet. Call mount first!`)
   }
-
   iFrame.contentWindow.postMessage({
       eventType,
       data
@@ -82,9 +81,9 @@ const setHeight = (height) => {
   iFrame.style.height = `${height}px`;
 }
 
-const sendPrefillData = (data) => {
+const sendSdkConfig = (data) => {
   sendToIframe({
-    eventType: 'prefillInputForm',
+    eventType: 'sdkConfig',
     data
   })
 }
