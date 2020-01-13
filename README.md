@@ -77,8 +77,8 @@ Here's a sample of the object that will passed to your `onSuccess` callback:
 ### Customisation  
 
 The `config` accepts `prefill` object to pre-fill the SDK form. Only following fields can be prefilled: 
-Legal entity name, Registration code, Country, Representative first name & Representative last name.
-**Note:** `residenceState` is applicable only when `residenceCountry` is `US`.  
+Legal entity name, Registration code, Country, Representative first name & Representative last name.  
+**Note:** The `residenceState` and `residenceCountry` code has to be **alpha2** format. `residenceState` is applicable only when `residenceCountry` is `US`.  
 
 Example: 
 ```
