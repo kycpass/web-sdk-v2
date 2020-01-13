@@ -1,6 +1,6 @@
 # Entify Web SDK (v2)
 
-The Entify JS SDK allows 1 step frontend integration with your website. 
+The Entify JS SDK allows seamless frontend integration with your website. 
 
 [DEMO](https://web-sdk-v2.herokuapp.com/)
 
@@ -11,29 +11,31 @@ Before you start integrating with the Entify SDK, make sure that you:
 - have requested an API token and received your API key. If you haven't, please send email to support@entifyme.com to get one.
 - have subscribed to the [Entify webhooks](https://developers.entifyme.com/#webhooks).
 
-### Installation
+### Integration steps 
 
-```
-<script src="https://sdk.entifyme.com/web-sdk-1.0.0.js"></script>
-```
-
-1. Import the Entify SDK script to your webpage.
-2. Request an SDK token [from our API](#requesting-a-jwt-token)
+1. Request an SDK token from Entify using our [API](#requesting-a-jwt-token)
+2. Import the Entify SDK script to your webpage.
 3. [Mount the SDK](#mounting-the-sdk).
+
 
 ### Requesting a JWT token
 
 You need to request a JWT token to load your customized SDK flow which will be displayed in your web-page.
 The flow of the SDK is generated according to the features tied to the JWT token.
-You can start a legal entity verification only after receiving the token [from the Entify API](https://developers.kyc-pass.com#sdk-tokens) and mounting it in the front end of your platform.
+
+You can start a legal entity verification only after receiving the token [from the Entify API](https://developers.entifyme.com#sdk-tokens) and mounting it in the front end of your platform.
 
 Each token has a lifetime of 7 days after which it becomes invalid and should be switched out for a new one.
 
-When creating the token, you need to supply a `referrer` parameter in the request body. This parameter should adhere to the [specification set forth by Google](https://developer.chrome.com/extensions/match_patterns).
+When creating the token, you need to supply a `referrer` parameter in the request body. This parameter should adhere to the [specification set forth by Google](https://developer.chrome.com/extensions/match_patterns). To prevent someone else using your SDK token to make requests and incurring charges, we recommend you set the `referrer` as strict as possible.
 
-We have disallowed using the `<all_urls>` pattern and strongly discourage using `*://*/*` - the `referrer` flag prohibits the use of your SDK token outside of the URL you explicitly allow it on.
+> We have disallowed using the `<all_urls>` pattern and strongly discourage using `*://*/*` - the `referrer` flag prohibits the use of your SDK token outside of the URL you explicitly allow it on.
 
-To prevent someone else using your SDK token to make requests and incurring charges, we recommend you set the `referrer` as strict as possible.
+### Import SDK
+
+```
+<script src="https://sdk.entifyme.com/web-sdk-1.0.0.js"></script>
+```
 
 ### Mounting the SDK
 
@@ -41,11 +43,11 @@ Once you've included the script tag in your HTML file and have your token, it is
 
 ```javascript
 window.entify.mount({
-  onLoad: ()=> console.log("The SDK is loaded"), // optional - callback function for when the SDK interface is loaded to your website
-  onSuccess: () => console.log("The SDK flow has completed!"), // optional - callback function for when the verification request has been submitted
-  onError: err => console.error(err), // optional - callback function for when the SDK encounters an irrecoverable error
-  token: "eyJhbG...", // required - the token you retrieve in step 2.
-  containerId: "root" // required - the id of the HTML element you wish to mount the SDK to.
+  token: "eyJhbG...",
+  onLoad: ()=> console.log("The SDK is loaded"),
+  onSuccess: () => console.log("The SDK flow has completed!"),
+  onError: err => console.error(err),
+  containerId: "root"
 });
 ```
 
