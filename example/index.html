@@ -42,7 +42,7 @@
 </body>
 
 <script type="text/javascript">
-    const token = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcklkIjoxLCJqdGkiOiI3NDQ0ZWQwZS1iNzgwLTQxODEtOGQ4Mi0wMTUyODM5ZjlhY2IiLCJiYXNlVXJsIjoiaHR0cHM6Ly9zdGFnaW5nYXBpLmt5Yy1wYXNzLmNvbS92MSIsInNpbmdsZVVzZSI6ZmFsc2UsImlhdCI6MTU3ODkwNTcwNywiZXhwIjoxNTc5NTEwNTA3fQ.hz6nwfqsgKznOvat8Gp6ZtTIctnTCWLs65S5Be0NDgI`
+    const token = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcklkIjoxMiwianRpIjoiNmZmNzBlMjUtYTE4MC00YzA2LThjM2UtOTE2NWM2NzRhYTdmIiwiYmFzZVVybCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAzMC92MSIsInNpbmdsZVVzZSI6ZmFsc2UsImlhdCI6MTU3OTA5MDY2OCwiZXhwIjoxNTc5Njk1NDY4fQ.ZjjBfvq69Srk6kxQhuGIqburP_NgouRV38828TKqjMQ`
     const onLoadHandler = () => {
       console.log('frame load finished');
     }
@@ -55,6 +55,7 @@
       onLoad: onLoadHandler,
       height: 200, // opptional
       config: {
+        customerReference:"my-custom-reference",
         prefill: {
           legalEntityName: 'Entifyme',
           registrationCode: '111-111-111',
