@@ -34,7 +34,7 @@ When creating the token, you need to supply a `referrer` parameter in the reques
 ### Import SDK
 
 ```
-<script src="https://sdk.entifyme.com/web-sdk-1.0.0.js"></script>
+<script src="https://sdk.entifyme.com/web-sdk-2.0.0.js"></script>
 ```
 
 ### Mounting the SDK
@@ -47,7 +47,8 @@ window.entify.mount({
   onLoad: ()=> console.log("The SDK is loaded"),
   onSuccess: () => console.log("The SDK flow has completed!"),
   onError: err => console.error(err),
-  containerId: "root"
+  containerId: "root",
+  config: { ...customisation }
 });
 ```
 
@@ -61,6 +62,7 @@ The `mount` function accepts an object with the following 4 properties:
 | onError   | no       | `function` | Callback function for when the SDK encounters an irrecoverable error   |
 | token     | yes      | `string`   | The JWT token you retrieve from our API                                |
 | container | yes      | `string`   | The ID of the HTML element you wish to mount the SDK to                |
+| config    | no      | `object`    | Client-side customisation of the SDK. [Read More](#customisation)      |
 
 Here's a sample of the object that will passed to your `onSuccess` callback:
 
@@ -72,6 +74,32 @@ Here's a sample of the object that will passed to your `onSuccess` callback:
   }
 }
 ```
+
+### Customisation  
+
+1. The `config` accepts a `prefill` object to pre-fill the SDK form. Only the following fields can be prefilled: 
+Legal entity name, Registration code, Country, Representative first name & Representative last name.  
+**Note:** The `residenceState` and `residenceCountry` code have to be **alpha2** format. `residenceState` is applicable only when `residenceCountry` is `US`.  
+
+2. Pass any custom reference in `customerReference` to associate it with screenings and corresponding webhook payload.
+
+> Customisation available via `config` is form v2 and onwards. 
+
+Example: 
+```
+config: {
+  customerReference: <any reference id>,
+  prefill: {
+    legalEntityName: 'Entifyme',
+    registrationCode: '111-111-111',
+    residenceCountry: 'US',
+    residenceState: 'AL',
+    representativeFirstName: 'Alice',
+    representativeLastName: 'Bob'
+  }
+}
+```
+
 ---
 ## Local development
 > Only for development  

@@ -1,11 +1,13 @@
 import SDKFrameUrl from './frameUrl';
 let iFrame;
+let config;
 
 //fallback handlers
 const eventHandlers = {
   onSuccess: () => console.log('No success handler found!'),
   onError: (err) => console.error('ERROR', err),
-  setHeight: (data) => setHeight(data.height)
+  setHeight: (data) => setHeight(data.height),
+  sendSdkConfig: () => sendSdkConfig(config)
 }
 
 const mount = (params) => {
@@ -17,6 +19,9 @@ const mount = (params) => {
     height = 400,
     token
   } = params;
+
+  //to be send later when iframe is ready
+  sdkConfig = params.config || {};
 
   if(onSuccess) {
     eventHandlers.onSuccess = onSuccess
@@ -58,7 +63,6 @@ const sendToIframe = ({ eventType, data, targetOrigin = '*' }) =>{
   if(!iFrame) {
     throw new Error(`Your frame is not loaded yet. Call mount first!`)
   }
-
   iFrame.contentWindow.postMessage({
       eventType,
       data
@@ -73,10 +77,16 @@ const setupListeners = (eventHandlers) => {
   })
 }
 
-const setHeight = (height) =>{
+const setHeight = (height) => {
   iFrame.style.height = `${height}px`;
 }
 
+const sendSdkConfig = (data) => {
+  sendToIframe({
+    eventType: 'sdkConfig',
+    data
+  })
+}
 
 console.log(`Entify SDK version: ${ENFY_VERISON}`);
 
