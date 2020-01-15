@@ -76,13 +76,16 @@ Here's a sample of the object that will passed to your `onSuccess` callback:
 
 ### Customisation  
 
-The `config` accepts a `prefill` object to pre-fill the SDK form. Only the following fields can be prefilled: 
+1. The `config` accepts a `prefill` object to pre-fill the SDK form. Only the following fields can be prefilled: 
 Legal entity name, Registration code, Country, Representative first name & Representative last name.  
 **Note:** The `residenceState` and `residenceCountry` code have to be **alpha2** format. `residenceState` is applicable only when `residenceCountry` is `US`.  
+
+2. Pass any custom reference in `customerReference` to associate it with screenings and corresponding webhook payload.
 
 Example: 
 ```
 config: {
+  customerReference: <any reference id>,
   prefill: {
     legalEntityName: 'Entifyme',
     registrationCode: '111-111-111',
