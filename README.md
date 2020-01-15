@@ -34,7 +34,7 @@ When creating the token, you need to supply a `referrer` parameter in the reques
 ### Import SDK
 
 ```
-<script src="https://sdk.entifyme.com/web-sdk-1.0.0.js"></script>
+<script src="https://sdk.entifyme.com/web-sdk-2.0.0.js"></script>
 ```
 
 ### Mounting the SDK
@@ -81,6 +81,8 @@ Legal entity name, Registration code, Country, Representative first name & Repre
 **Note:** The `residenceState` and `residenceCountry` code have to be **alpha2** format. `residenceState` is applicable only when `residenceCountry` is `US`.  
 
 2. Pass any custom reference in `customerReference` to associate it with screenings and corresponding webhook payload.
+
+> Customisation available via `config` is form v2 and onwards. 
 
 Example: 
 ```
