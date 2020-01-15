@@ -21,7 +21,7 @@ const mount = (params) => {
   } = params;
 
   //to be send later when iframe is ready
-  sdkConfig = params.config || {};
+  config = params.config || {};
 
   if(onSuccess) {
     eventHandlers.onSuccess = onSuccess
