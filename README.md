@@ -47,7 +47,8 @@ window.entify.mount({
   onLoad: ()=> console.log("The SDK is loaded"),
   onSuccess: () => console.log("The SDK flow has completed!"),
   onError: err => console.error(err),
-  containerId: "root"
+  containerId: "root",
+  config: { ...customisation }
 });
 ```
 
