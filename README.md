@@ -102,7 +102,6 @@ config: {
 
 The customisation object also accepts `translations`:
 ```
-
 config: {
   translations: {
     startScreening: {
@@ -110,9 +109,10 @@ config: {
     }
   }
 }
-
 ```
 You can find a reference JSON object with all available translateable strings [here](./translations.default.json).
+
+
 ---
 ## Local development
 > Only for development  
