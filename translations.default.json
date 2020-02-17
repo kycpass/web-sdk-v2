@@ -1,0 +1,39 @@
+{
+  "continue": {
+    "title": "Looks like you didn't finish submitting the last screening you started - would you like to continue?",
+    "continue": "Continue",
+    "startNew": "Start new"
+  },
+  "done": {
+    "title": "Your legal entity verification has been submitted!",
+    "description": "Press the button below or refresh the page to submit another verification.",
+    "reset": "Take me back to the start"
+  },
+  "error": {
+    "genericError": "Something went wrong."
+  },
+  "startScreening": {
+    "legalEntity": {
+      "title": "Legal entity details:",
+      "name": "Legal entity name",
+      "nameError": "Please enter the name of the legal entity you wish to screen!",
+      "registrationCode": "Legal entity registration code",
+      "registrationCodeError": "Please enter the registration number of the legal entity you wish to screen!",
+      "registrationResidence": "Legal entity's registration country",
+      "registrationResidenceState": "Legal entity's state",
+      "registrationResidenceStateError": "Please select a state"
+    },
+    "representative": {
+      "title": "Representative details:",
+      "firstName": "Representative's first name",
+      "firstNameError": "Please make sure you enter the representative's first name",
+      "lastName": "Representative's last name",
+      "lastNameError": "Please make sure you enter the representative's last name"
+    },
+    "loading": "Please wait..",
+    "termsAndConditionsPrefix": "I confirm I agree to Entify",
+    "termsAndConditionsLinkText": "terms and conditions",
+    "termsAndConditionsError": "Please review and accept the terms and conditions before continuing!",
+    "continue": "Continue"
+  }
+}
