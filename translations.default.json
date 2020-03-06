@@ -18,6 +18,8 @@
       "name": "Legal entity name",
       "nameError": "Please enter the name of the legal entity you wish to screen!",
       "registrationCode": "Legal entity registration code",
+      "registryCodeLengthError": "The registration code must contain least 5 characters",
+      "registryCodeLengthErrorEE": "Estonian business registration code must contain 8 characters",
       "registrationCodeError": "Please enter the registration number of the legal entity you wish to screen!",
       "registrationResidence": "Legal entity's registration country",
       "registrationResidenceState": "Legal entity's state",
