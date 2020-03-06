@@ -29,10 +29,10 @@ Each token has a lifetime of 7 days after which it becomes invalid and should be
 
 When creating the token, you need to supply a `referrer` parameter in the request body. This parameter should adhere to the [specification set forth by Google](https://developer.chrome.com/extensions/match_patterns). To prevent someone else using your SDK token to make requests and incurring charges, we recommend you set the `referrer` as strict as possible.
 
-> We have disallowed using the `<all_urls>` pattern and strongly discourage using `*://*/*` - the `referrer` flag prohibits the use of your SDK token outside of the URL you explicitly allow it on.
-
-You can generate a token specific to a product (Product is a bundle of features set), by passing `customerProductId` in the request body. In this case the product id **can't** be overridden by passing it in [SDK configuration](#sdk_configuration).  
-If the token is not tied to a product id (i.e. if you don't pass `customerProductId` in request body), the `customerProductId` must be passed to [SDK configuration](#sdk_configuration) while mounting.  
+> We have disallowed using the `<all_urls>` pattern and strongly discourage using `*://*/*` - the `referrer` flag prohibits the use of your SDK token outside of the URL you explicitly allow it on.  
+  
+You can generate a token specific to a product (Product is a bundle of features set), by passing `customerProductId` in the request body. In this case the product id **can't** be overridden by passing it in [SDK configuration](#sdk-configuration).    
+If the token is not associated to a product id (i.e. if you don't pass `customerProductId` in request body), the `customerProductId` must be passed to [SDK configuration](#sdk-configuration) while mounting.  
 
 ### Import SDK
 
