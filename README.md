@@ -1,6 +1,6 @@
 # Entify Web SDK (v2)
 
-The Entify JS SDK allows seamless frontend integration with your website. 
+The Entify JS SDK allows seamless frontend integration with your website.
 
 [DEMO](https://web-sdk-v2.herokuapp.com/)
 
@@ -11,7 +11,7 @@ Before you start integrating with the Entify SDK, make sure that you:
 - have requested an API token and received your API key. If you haven't, please send email to support@entifyme.com to get one.
 - have subscribed to the [Entify webhooks](https://developers.entifyme.com/#webhooks).
 
-### Integration steps 
+### Integration steps
 
 1. Request an SDK token from Entify using our [API](#requesting-a-jwt-token)
 2. Import the Entify SDK script to your webpage.
@@ -31,6 +31,9 @@ When creating the token, you need to supply a `referrer` parameter in the reques
 
 > We have disallowed using the `<all_urls>` pattern and strongly discourage using `*://*/*` - the `referrer` flag prohibits the use of your SDK token outside of the URL you explicitly allow it on.
 
+You can generate a token specific to a product (Product is a bundle of features set), by passing `customerProductId` in the request body. In this case the product id **can't** be overridden by passing it in [SDK configuration](#sdk_configuration).  
+If the token is not tied to a product id (i.e. if you don't pass `customerProductId` in request body), the `customerProductId` must be passed to [SDK configuration](#sdk_configuration) while mounting.  
+
 ### Import SDK
 
 ```
@@ -48,7 +51,7 @@ window.entify.mount({
   onSuccess: () => console.log("The SDK flow has completed!"),
   onError: err => console.error(err),
   containerId: "root",
-  config: { ...customisation }
+  config: { ...configuration }
 });
 ```
 
@@ -75,19 +78,24 @@ Here's a sample of the object that will passed to your `onSuccess` callback:
 }
 ```
 
-### Customisation  
+### SDK Configuration  
 
-1. The `config` accepts a `prefill` object to pre-fill the SDK form. Only the following fields can be prefilled: 
+1. The `config` accepts a `prefill` object to pre-fill the SDK form. Only the following fields can be prefilled:
 Legal entity name, Registration code, Country, Representative first name & Representative last name.  
 **Note:** The `residenceState` and `residenceCountry` code have to be **alpha2** format. `residenceState` is applicable only when `residenceCountry` is `US`.  
 
 2. Pass any custom reference in `customerReference` to associate it with screenings and corresponding webhook payload.
 
-> Customisation available via `config` is form v2 and onwards. 
+3. Pass product id `customerProductId` to mount the SDK with a specific product (Product is a bundle of features set). This is a **required**  field when the token is not associated with any `customerProductId` and you have multiple products enabled.  
 
-Example: 
+**Note:**  
+`customerProductId` - Only applicable If your **token is not associated with any customerProductId**
+
+
+Example:
 ```
 config: {
+  customerProductId: <your product id given by entify> *
   customerReference: <any reference id>,
   prefill: {
     legalEntityName: 'Entifyme',
@@ -126,12 +134,12 @@ Make sure your frame url is accessible and assigned to `FRAME_URL`.
 
 ### Available scripts  
 
-For development: 
+For development:
 ```
 npm run dev
 ```
 
-For production build: 
+For production build:
 ```
 npm run build
 ```
