@@ -1,4 +1,86 @@
 {
+  "questionnaire": {
+    "fields": {
+      "address": {
+        "address": "Address line",
+        "country": "Country",
+        "city": "City",
+        "postCode": "Postal code"
+      },
+      "firstName": "First name",
+      "lastName": "Last name",
+      "comment": "Comment",
+      "dateOfBirth": "Date of birth",
+      "personalIdentityCode": "Personal code",
+      "politicallyExposedQuestion": "Is he/she performing or has he/she performed important tasks of public authority or is he/she a close associate or a family member of an employee performing important duties of public authorities?",
+      "politicallyExposedYes": "Yes (specify)",
+      "politicallyExposedNo": "No"
+    },
+    "title": "DATA FOR PREVENTING MONEY LAUNDERING AND TERRORIST FINANCING",
+    "legalEntityData": {
+      "title": "Data regarding legal entity",
+      "subtitle": "Legal entity participating in the transaction",
+      "fields": {
+        "name": "Legal entity name",
+        "registrationCode": "Legal entity registry code",
+        "fieldOfActivity": "Main field of business activity",
+        "phone": "Telephone",
+        "email": "E-mail",
+        "webPage": "Web page",
+
+        "billingAddress": {
+          "sameAsMain": "Same as main address"
+        }
+      }
+    },
+    "boardMembers": {
+      "title": "Board members",
+      "subtitle": "Board member names and their powers (are there any restrictions)",
+      "fields": {
+        "representationRights": "Representation rights"
+      },
+      "addAnother": "Add additional board member"
+    },
+    "representative": {
+      "title": "Data regarding representative",
+      "subtitle": "Legal entity representative",
+      "basisOfRepresentation": {
+        "title": "Basis of representation",
+        "legalRepresentation": "Legal Representation",
+        "powerOfAttorney": "Power of attorney",
+        "other": "Other (specify)"
+      }
+    },
+    "beneficiaries": {
+      "title": "Data regarding beneficiary",
+      "subtitle": "Actual beneficiary (the natural person) who owns or controls a legal entity through direct or indirect ownership having control over 25% or more of the shares  (except for listed companies) or a person having control in any other manner. If necessary, all relevant clarifications regarding ownership and control structure.",
+      "fields": {
+        "citizenship": "Citizenship",
+        "taxResidency": "Tax residency",
+        "ownershipType": {
+          "title": "Ownership type",
+          "direct": "Direct",
+          "indirect": "Indirect (specify)",
+          "other": "Other (specify)"
+        }
+      },
+      "addAnother": "Add additional beneficiary"
+    },
+    "transactionPurpose": {
+      "title": "Data regarding the purpose and nature of the transaction",
+      "purpose": "Description and purpose of the transaction (in brief)",
+      "sourceOfFinancing": "Source of financing of the transaction (origin of the money)"
+    },
+    "documents": {
+      "title": "Upload additional documents",
+      "subtitle": "Additional documents regarding legal capacity, powers (e.g. power of attorney) and/or actual beneficiary (if needed)",
+      "powerOfAttorney": "Power of attorney",
+      "other": "Other documents",
+      "upload": "Upload"
+    },
+    "dataAccuracyConfirmation": "By clicking the box, you declare and warrant that all the information you provided is true and accurate to the best of your knowledge",
+    "continue": "Continue"
+  },
   "continue": {
     "title": "Looks like you didn't finish submitting the last screening you started - would you like to continue?",
     "continue": "Continue",
@@ -17,9 +99,9 @@
       "title": "Legal entity details:",
       "name": "Legal entity name",
       "nameError": "Please enter the name of the legal entity you wish to screen!",
-      "registrationCode": "Legal entity registration code",
       "registryCodeLengthError": "The registration code must contain least 5 characters",
       "registryCodeLengthErrorEE": "Estonian business registration code must contain 8 characters",
+      "registrationCode": "Legal entity registration code",
       "registrationCodeError": "Please enter the registration number of the legal entity you wish to screen!",
       "registrationResidence": "Legal entity's registration country",
       "registrationResidenceState": "Legal entity's state",
@@ -42,8 +124,8 @@
     "start": {
       "title": "Verify your identity",
       "descriptions": [
-        "Please press Start to begin the verification process.",
-        "It will only take a couple of minutes."
+        "Please make sure your camera and microphone are enabled and press Start to begin the verification process.",
+        "It will only take a couple of minutes. Make sure you are taking the photos in real time and NOT using the photo uploading option. As the last step you should be prompted to record a liveness video."
       ],
       "startButtonText": "Start"
     },
@@ -53,6 +135,11 @@
       "passport_hint": "Your main passport photo page",
       "driving_licence_hint": "Front and back of the document",
       "national_identity_card_hint": "Front and back of the document"
+    },
+    "retry": {
+      "buttonText": "Try Again",
+      "heading": "Please go through only the identity verification process again.",
+      "text": "Make sure your camera and microphone are enabled in your browser in order to go through the verification flow in real time. Press Try again and take the photos inside the flow without uploading your document photos. As the last step you should be prompted to record a liveness video. We kindly ask you NOT to choose the Selfie taking option"
     },
     "complete": {
       "message": "Thank you for submitting your identity verification!",
