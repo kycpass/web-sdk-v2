@@ -1,6 +1,6 @@
 # Entify Web SDK (v2)
 
-The Entify JS SDK allows seamless frontend integration with your website. 
+The Entify JS SDK allows seamless frontend integration with your website.
 
 [DEMO](https://web-sdk-v2.herokuapp.com/)
 
@@ -11,7 +11,7 @@ Before you start integrating with the Entify SDK, make sure that you:
 - have requested an API token and received your API key. If you haven't, please send email to support@entifyme.com to get one.
 - have subscribed to the [Entify webhooks](https://developers.entifyme.com/#webhooks).
 
-### Integration steps 
+### Integration steps
 
 1. Request an SDK token from Entify using our [API](#requesting-a-jwt-token)
 2. Import the Entify SDK script to your webpage.
@@ -77,15 +77,15 @@ Here's a sample of the object that will passed to your `onSuccess` callback:
 
 ### Customisation  
 
-1. The `config` accepts a `prefill` object to pre-fill the SDK form. Only the following fields can be prefilled: 
+1. The `config` accepts a `prefill` object to pre-fill the SDK form. Only the following fields can be prefilled:
 Legal entity name, Registration code, Country, Representative first name & Representative last name.  
 **Note:** The `residenceState` and `residenceCountry` code have to be **alpha2** format. `residenceState` is applicable only when `residenceCountry` is `US`.  
 
 2. Pass any custom reference in `customerReference` to associate it with screenings and corresponding webhook payload.
 
-> Customisation available via `config` is form v2 and onwards. 
+> Customisation available via `config` is form v2 and onwards.
 
-Example: 
+Example:
 ```
 config: {
   customerReference: <any reference id>,
@@ -122,26 +122,29 @@ Create a `.env` file with the following variables:
 ```
 FRAME_URL= # entify sdk frame url without trailing slash
 ```
-Make sure your frame url is accessible and assigned to `FRAME_URL`.
+
+`FRAME_URL` is the url where the [web-sdk-iframe](https://github.com/kycpass/web-sdk-iframe) is running.    
+> Go to `web-sdk-iframe` repo and run `npm run dev`. Assign the URL to `FRAME_URL` in .env as mentioned above.
 
 ### Available scripts  
 
-For development: 
+For development:
 ```
 npm run dev
 ```
+This will open a demo web-page with SDK mounted in it. Look `example/index.html`. You might need to update token used in the example.
 
-For production build: 
+For production build:
 ```
 npm run build
 ```
 
-**NOTE:** In production build, the `NODE_ENV` is set to `production`. It appends the version no to the frame url.  
+**NOTE:** In **production build**, the `NODE_ENV` is set to `production`. It appends the version no to the frame url.  
 For example, in production build, the sdk will try to load iframe from the following url if the sdk version is 2.x.x:   
 ```
 <frame_url>/v2/?token=<token>
 ```
-Check out codebase of the [sdk frame](https://github.com/kycpass/web-sdk-frame)
+Check out codebase of the [web-sdk-iframe](https://github.com/kycpass/web-sdk-iframe)
 
 ---
 
