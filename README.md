@@ -130,7 +130,9 @@ Create a `.env` file with the following variables:
 ```
 FRAME_URL= # entify sdk frame url without trailing slash
 ```
-Make sure your frame url is accessible and assigned to `FRAME_URL`.
+
+`FRAME_URL` is the url where the [web-sdk-iframe](https://github.com/kycpass/web-sdk-iframe) is running.    
+> Go to `web-sdk-iframe` repo and run `npm run dev`. Assign the URL to `FRAME_URL` in .env as mentioned above.
 
 ### Available scripts  
 
@@ -138,18 +140,19 @@ For development:
 ```
 npm run dev
 ```
+This will open a demo web-page with SDK mounted in it. Look `example/index.html`. You might need to update token used in the example.
 
 For production build:
 ```
 npm run build
 ```
 
-**NOTE:** In production build, the `NODE_ENV` is set to `production`. It appends the version no to the frame url.  
+**NOTE:** In **production build**, the `NODE_ENV` is set to `production`. It appends the version no to the frame url.  
 For example, in production build, the sdk will try to load iframe from the following url if the sdk version is 2.x.x:   
 ```
 <frame_url>/v2/?token=<token>
 ```
-Check out codebase of the [sdk frame](https://github.com/kycpass/web-sdk-frame)
+Check out codebase of the [web-sdk-iframe](https://github.com/kycpass/web-sdk-iframe)
 
 ---
 

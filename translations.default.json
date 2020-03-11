@@ -1,4 +1,86 @@
 {
+  "questionnaire": {
+    "fields": {
+      "address": {
+        "address": "Address line",
+        "country": "Country",
+        "city": "City",
+        "postCode": "Postal code"
+      },
+      "firstName": "First name",
+      "lastName": "Last name",
+      "comment": "Comment",
+      "dateOfBirth": "Date of birth",
+      "personalIdentityCode": "Personal code",
+      "politicallyExposedQuestion": "Is he/she performing or has he/she performed important tasks of public authority or is he/she a close associate or a family member of an employee performing important duties of public authorities?",
+      "politicallyExposedYes": "Yes (specify)",
+      "politicallyExposedNo": "No"
+    },
+    "title": "DATA FOR PREVENTING MONEY LAUNDERING AND TERRORIST FINANCING",
+    "legalEntityData": {
+      "title": "Data regarding legal entity",
+      "subtitle": "Legal entity participating in the transaction",
+      "fields": {
+        "name": "Legal entity name",
+        "registrationCode": "Legal entity registry code",
+        "fieldOfActivity": "Main field of business activity",
+        "phone": "Telephone",
+        "email": "E-mail",
+        "webPage": "Web page",
+
+        "billingAddress": {
+          "sameAsMain": "Same as main address"
+        }
+      }
+    },
+    "boardMembers": {
+      "title": "Board members",
+      "subtitle": "Board member names and their powers (are there any restrictions)",
+      "fields": {
+        "representationRights": "Representation rights"
+      },
+      "addAnother": "Add additional board member"
+    },
+    "representative": {
+      "title": "Data regarding representative",
+      "subtitle": "Legal entity representative",
+      "basisOfRepresentation": {
+        "title": "Basis of representation",
+        "legalRepresentation": "Legal Representation",
+        "powerOfAttorney": "Power of attorney",
+        "other": "Other (specify)"
+      }
+    },
+    "beneficiaries": {
+      "title": "Data regarding beneficiary",
+      "subtitle": "Actual beneficiary (the natural person) who owns or controls a legal entity through direct or indirect ownership having control over 25% or more of the shares  (except for listed companies) or a person having control in any other manner. If necessary, all relevant clarifications regarding ownership and control structure.",
+      "fields": {
+        "citizenship": "Citizenship",
+        "taxResidency": "Tax residency",
+        "ownershipType": {
+          "title": "Ownership type",
+          "direct": "Direct",
+          "indirect": "Indirect (specify)",
+          "other": "Other (specify)"
+        }
+      },
+      "addAnother": "Add additional beneficiary"
+    },
+    "transactionPurpose": {
+      "title": "Data regarding the purpose and nature of the transaction",
+      "purpose": "Description and purpose of the transaction (in brief)",
+      "sourceOfFinancing": "Source of financing of the transaction (origin of the money)"
+    },
+    "documents": {
+      "title": "Upload additional documents",
+      "subtitle": "Additional documents regarding legal capacity, powers (e.g. power of attorney) and/or actual beneficiary (if needed)",
+      "powerOfAttorney": "Power of attorney",
+      "other": "Other documents",
+      "upload": "Upload"
+    },
+    "dataAccuracyConfirmation": "By clicking the box, you declare and warrant that all the information you provided is true and accurate to the best of your knowledge",
+    "continue": "Continue"
+  },
   "continue": {
     "title": "Looks like you didn't finish submitting the last screening you started - would you like to continue?",
     "continue": "Continue",
@@ -17,9 +99,9 @@
       "title": "Legal entity details:",
       "name": "Legal entity name",
       "nameError": "Please enter the name of the legal entity you wish to screen!",
-      "registrationCode": "Legal entity registration code",
       "registryCodeLengthError": "The registration code must contain least 5 characters",
       "registryCodeLengthErrorEE": "Estonian business registration code must contain 8 characters",
+      "registrationCode": "Legal entity registration code",
       "registrationCodeError": "Please enter the registration number of the legal entity you wish to screen!",
       "registrationResidence": "Legal entity's registration country",
       "registrationResidenceState": "Legal entity's state",
@@ -42,65 +124,138 @@
     "start": {
       "title": "Verify your identity",
       "descriptions": [
-        "Please press Start to begin the verification process.",
-        "It will only take a couple of minutes."
+        "Please make sure your camera and microphone are enabled and press Start to begin the verification process.",
+        "It will only take a couple of minutes. Make sure you are taking the photos in real time and NOT using the photo uploading option. As the last step you should be prompted to record a liveness video."
       ],
       "startButtonText": "Start"
     },
-    "documents": {
-      "title": "Document verification",
-      "hint": "Select the type of document you would like to upload",
-      "passport_hint": "Your main passport photo page",
-      "driving_licence_hint": "Front and back of the document",
-      "national_identity_card_hint": "Front and back of the document"
+    "retry": {
+      "buttonText": "Try Again",
+      "heading": "Please go through only the identity verification process again.",
+      "text": "Make sure your camera and microphone are enabled in your browser in order to go through the verification flow in real time. Press Try again and take the photos inside the flow without uploading your document photos. As the last step you should be prompted to record a liveness video. We kindly ask you NOT to choose the Selfie taking option"
     },
-    "complete": {
-      "message": "Thank you for submitting your identity verification!",
-      "subMessage": "Feel free to close this browser window or refer back to the self-service."
+    "document_selector": {
+      "identity": {
+        "title": "Verify your identity",
+        "hint": "Select the type of document you would like to upload",
+        "passport_hint": "Face photo page",
+        "national_identity_card_hint": "Front and back"
+      }
     },
     "capture": {
-      "passport": {
-        "front": {
-          "title": "Submit passport photo page"
-        }
-      },
       "national_identity_card": {
         "front": {
-          "title": "Submit identity card (front)"
+          "title": "Submit identity card (front)",
+          "instructions": "Upload front of card from your computer",
+          "webcam": "Position the front of card in the frame (it will be automatically detected)"
         },
         "back": {
-          "title": "Submit identity card (back)"
+          "title": "Submit identity card (back)",
+          "instructions": "Upload back of card from your computer",
+          "webcam": "Position the back of card in the frame (it will be automatically detected)"
         }
       },
-      "driving_licence": {
+      "passport": {
         "front": {
-          "title": "Submit license (front)"
-        },
-        "back": {
-          "title": "Submit license (back)"
+          "title": "Submit passport photo page",
+          "instructions": "Upload passport photo page from your computer",
+          "webcam": "Position your passport photo page in the frame (it will be automatically detected)"
         }
+      },
+      "face": {
+        "title": "Take a selfie",
+        "upload_title": "Selfie",
+        "instructions": "Upload a selfie from your computer",
+        "intro": {
+          "title": "Take a selfie",
+          "subtitle": "We'll compare it with your document",
+          "selfie_instruction": "Face forward and make sure your eyes are clearly visible",
+          "glasses_instruction": "Remove your glasses, if necessary",
+          "accessibility": {
+            "selfie_capture_tips": "Tips to take a good selfie"
+          }
+        }
+      },
+      "liveness": {
+        "start": "Start",
+        "stop": "Stop",
+        "recording": "Recording",
+        "press_record": "Press record and follow the instructions",
+        "intro": {
+          "title": "Let's make sure nobody's impersonating you",
+          "two_actions": "We'll ask you to film yourself performing <strong>2 simple actions</strong>",
+          "speak_out_loud": "One will involve <strong>speaking out loud</strong>",
+          "continue": "Continue"
+        },
+        "challenges": {
+          "position_face": "Position your face in the oval",
+          "recite": "Say each digit out loud",
+          "movement": "Look over your %{side} shoulder",
+          "right": "right",
+          "left": "left",
+          "done_next": "When you're done, press next",
+          "done_stop": "When you're done, press stop",
+          "next": "Next"
+        }
+      },
+      "upload_document": "Upload",
+      "upload_file": "or upload photo – no scans or photocopies",
+      "take_photo": "Take photo",
+      "switch_device": "Continue on phone"
+    },
+    "confirm": {
+      "document": {
+        "title": "Check readability",
+        "alt": "Photo of your document"
+      },
+      "national_identity_card": {
+        "message": "Make sure your card details are clear to read, with no blur or glare"
+      },
+      "passport": {
+        "message": "Make sure your passport details are clear to read, with no blur or glare"
+      },
+      "face": {
+        "standard": {
+          "title": "Check selfie",
+          "message": "Make sure your selfie clearly shows your face",
+          "alt": "Photo of your face"
+        },
+        "video": {
+          "title": "Check selfie video"
+        }
+      },
+      "confirm": "Confirm",
+      "continue": "Continue",
+      "redo": "Redo",
+      "enlarge_image": {
+        "enlarge": "Enlarge image",
+        "close": "Close"
       }
     },
     "cross_device": {
       "intro": {
-        "document": {
-          "title": "Continue verification on your mobile",
-          "take_photos": "We'll walk you through taking the photos",
-          "action": "Continue"
-        },
-        "face": {
-          "title": "Continue face verification on your mobile",
-          "take_photos": "Complete face verification to prove it's really you",
-          "action": "Continue"
-        },
-        "sub_title": "It's easy, fast and secure.",
-        "sms": "We'll SMS a secure link to your mobile (no app download required)",
-        "return_computer": "Return to your computer to complete your verification"
+        "title": "Continue on your phone",
+        "sub_title": "Here's how to do it:",
+        "description_li_1": "Send a secure link to your phone",
+        "description_li_2": "Open the link and complete the tasks",
+        "description_li_3": "Check back here to finish the submission",
+        "action": "Get secure link"
+      },
+      "client_success": {
+        "title": "Uploads successful",
+        "sub_title": "You can now return to your computer to continue",
+        "body": "Your computer may take a few seconds to update"
       },
       "link": {
         "title": "Get your secure link",
-        "sub_title": "We'll text a <em>one-time secure link</em> to your mobile",
-        "link_copy": {
+        "qr_code_sub_title": "Scan the QR code with your phone",
+        "sms_sub_title": "Send this one-time link to your phone",
+        "copy_link_sub_title": "Open the link on your mobile",
+        "options_divider_label": "or",
+        "sms_option": "Get link via SMS",
+        "copy_link_option": "Copy link",
+        "qr_code_option": "Scan QR code",
+        "copy_link": {
           "action": "Copy",
           "success": "Copied"
         },
@@ -108,20 +263,25 @@
           "action": "Send link",
           "status": "Sending"
         },
-        "sms_label": "Mobile number",
-        "copy_link_label": "Copy link instead:"
+        "qr_code": {
+          "help_label": "How to scan a QR code",
+          "help_step_1": "Point your phone’s camera at the QR code",
+          "help_step_2": "If it doesn’t work, download a QR code scanner from Google Play or the App Store"
+        },
+        "sms_label": "Enter your mobile number:",
+        "copy_link_label": "Copy the link to your mobile browser"
+      },
+      "submit": {
+        "title": "Great, that's everything we need",
+        "sub_title": "We're now ready to verify your identity",
+        "selfie_uploaded": "Selfie uploaded",
+        "video_uploaded": "Video uploaded",
+        "action": "Submit verification",
+        "multiple_docs_uploaded": "Documents uploaded",
+        "one_doc_uploaded": "Document uploaded"
       },
       "phone_number_placeholder": "Enter mobile number",
-      "mobile_notification_sent": {
-        "title": "Check your mobile",
-        "submessage": "We've sent a secure link to %{number}",
-        "bold_message": "It may take a few minutes to arrive",
-        "tips": {
-          "item_1": "Keep this window open while using your mobile",
-          "item_2": "Your link will expire in one hour"
-        },
-        "resend_link": "Resend link"
-      },
+      "loading": "Loading...",
       "mobile_connected": {
         "title": {
           "message": "Connected to your mobile",
@@ -133,28 +293,76 @@
           "item_3": "Don't refresh this page"
         }
       },
-      "client_success": {
-        "title": "Uploads successful",
-        "sub_title": "You can now return to your computer to continue",
-        "body": "Your computer may take a few seconds to update"
+      "mobile_notification_sent": {
+        "title": "Check your mobile",
+        "submessage": "We've sent a secure link to %{number}",
+        "bold_message": "It may take a few minutes to arrive",
+        "tips": {
+          "item_1": "Keep this window open while using your mobile",
+          "item_2": "Your link will expire in one hour"
+        },
+        "resend_link": "Resend link"
       },
-      "submit": {
-        "title": "Great, that's everything we need",
-        "sub_title": "We're now ready to verify your identity",
-        "selfie_uploaded": "Selfie uploaded",
-        "video_uploaded": "Video uploaded",
-        "action": "Submit verification",
-        "multiple_docs_uploaded": "Documents uploaded",
-        "one_doc_uploaded": "Document uploaded"
-      }
+      "switch_device": {
+        "header": "Take a photo with your phone"
+      },
+      "tips": "Tips"
+    },
+    "webcam_permissions": {
+      "allow_access": "Allow camera access",
+      "enable_webcam_for_selfie": "When prompted, you must enable camera access to continue",
+      "click_allow": "We cannot verify you without using your camera",
+      "allow": "Allow",
+      "why": "Why do I need to do this?",
+      "if_denied": "If you deny camera access, you won't be able to take pictures and complete verification process.",
+      "enable_webcam": "Enable camera",
+      "access_denied": "Camera access is denied",
+      "recover_access": "Recover camera access to continue face verification",
+      "recovery": "Recovery",
+      "follow_steps": "Follow these steps to recover camera access:",
+      "grant_access": "Grant access to your camera from your browser settings",
+      "refresh_page": "Refresh this page to restart the identity verification process",
+      "refresh": "Refresh"
     },
     "errors": {
+      "invalid_capture": {
+        "message": "No document detected",
+        "instruction": "Make sure all the document is in the photo"
+      },
+      "invalid_type": {
+        "message": "File not uploaded.",
+        "instruction": "Try using another file type."
+      },
+      "unsupported_file": {
+        "message": "File type not supported",
+        "instruction": "Try using a JPG or PNG file"
+      },
+      "invalid_size": {
+        "message": "File size exceeded.",
+        "instruction": "Must be under 10MB."
+      },
+      "no_face": {
+        "message": "No face found",
+        "instruction": "Your face is needed in the selfie"
+      },
+      "multiple_faces": {
+        "message": "Multiple faces found",
+        "instruction": "Only your face can be in the selfie"
+      },
       "server_error": {
         "message": "Connection lost",
         "instruction": "Please try again"
       },
+      "glare_detected": {
+        "message": "Glare detected",
+        "instruction": "All details should be clear and readable"
+      },
       "sms_failed": {
         "message": "Something's gone wrong",
+        "instruction": "Copy the link to your phone"
+      },
+      "sms_overuse": {
+        "message": "Too many failed attempts",
         "instruction": "Copy the link to your phone"
       },
       "lazy_loading": {
@@ -166,12 +374,63 @@
       "generic_client_error": {
         "message": "Something's gone wrong",
         "instruction": "You'll need to restart your verification on your computer"
+      },
+      "forbidden_client_error": {
+        "message": "Something's gone wrong",
+        "instruction": "The link only works on mobile devices"
+      },
+      "camera_not_working": {
+        "message": "Camera not working",
+        "instruction": "It may be disconnected. <fallback>Try using your phone instead</fallback>."
+      },
+      "camera_not_working_no_fallback": {
+        "instruction": "Make sure your device's camera works"
+      },
+      "liveness_timeout": {
+        "message": "Looks like you took too long",
+        "instruction": "Remember to press stop when you're done. <fallback>Redo video actions</fallback>"
+      },
+      "camera_inactive": {
+        "message": "Having camera problems?",
+        "instruction": "<fallback>Use your mobile</fallback> to continue face verification"
+      },
+      "camera_inactive_no_fallback": {
+        "instruction": "Make sure your device has a working camera"
+      },
+      "interrupted_flow_error": {
+        "message": "Camera not detected",
+        "instruction": "Restart process on a different device"
+      },
+      "unsupported_android_browser": {
+        "message": "Unsupported browser",
+        "instruction": "Restart the process on the latest version of Google Chrome"
+      },
+      "unsupported_ios_browser": {
+        "message": "Unsupported browser",
+        "instruction": "Restart the process on the latest version of Safari"
       }
     },
+    "accessibility": {
+      "close_sdk_screen": "Close identity verification screen",
+      "dismiss_alert": "Dismiss alert",
+      "camera_view": "View from camera",
+      "shutter": "Take a photo",
+      "start_recording": "Start recording",
+      "stop_recording": "Stop recording",
+      "replay_video": "Replay your recorded video",
+      "document_types": "Documents you can use to verify your identity",
+      "selfie_video_actions": "Actions to record a selfie video",
+      "cross_device_verification": "Steps required to continue verification on your mobile",
+      "country_select": "Select country"
+    },
     "passport": "Passport",
-    "driving_licence": "Driving licence",
-    "national_identity_card": "National identity card",
+    "national_identity_card": "Identity Card",
+    "short_passport": "passport",
+    "short_national_identity_card": "card",
+    "loading": "Loading",
+    "back": "back",
     "cancel": "Cancel",
-    "back": "back"
+    "close": "close",
+    "continue": "Continue"
   }
 }
