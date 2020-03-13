@@ -125,14 +125,18 @@
       "title": "Verify your identity",
       "descriptions": [
         "Please make sure your camera and microphone are enabled and press Start to begin the verification process.",
-        "It will only take a couple of minutes. Make sure you are taking the photos in real time and NOT using the photo uploading option. As the last step you should be prompted to record a liveness video."
+        "Please take the photos in real time (video). You will be prompted to record a liveness video. Please note that the verification process is not currently supported on Iphone.”"
       ],
       "startButtonText": "Start"
     },
     "retry": {
       "buttonText": "Try Again",
       "heading": "Please go through only the identity verification process again.",
-      "text": "Make sure your camera and microphone are enabled in your browser in order to go through the verification flow in real time. Press Try again and take the photos inside the flow without uploading your document photos. As the last step you should be prompted to record a liveness video. We kindly ask you NOT to choose the Selfie taking option"
+      "text1": "Make sure your camera and microphone are enabled.",
+      "text2": "Please note that the verification process is NOT SUPPORTED on Iphone.",
+      "text3": "Press Try again.",
+      "text4": "Take the photos inside the flow in real time (video).",
+      "text5": "As the last step, record a liveness video. We kindly ask you NOT to choose the Selfie taking option."
     },
     "document_selector": {
       "identity": {
