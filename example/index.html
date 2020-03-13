@@ -41,8 +41,8 @@
   </div>
 </body>
 
-<script type="text/javascript">
-    const token = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcklkIjoxLCJqdGkiOiIxN2EzOWYxMC02Njg3LTQ2ZDItOTMyMS01MTE0NDU3NzAwM2EiLCJiYXNlVXJsIjoiaHR0cHM6Ly9zdGFnaW5nYXBpLmt5Yy1wYXNzLmNvbS92MSIsInNpbmdsZVVzZSI6ZmFsc2UsImlhdCI6MTU3OTA5MTcyMSwiZXhwIjoxNTc5Njk2NTIxfQ.Fv6wsimc4WQFBmyLvcPExkk9YvaZgY1QiQv4aO6rHro`
+<script type="text/javascript">    
+    const token = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcklkIjoxLCJqdGkiOiI0MTY3NGVkYi03ZjRmLTRmYTgtYmU4NS1kZmEzOGJmNGZhYTEiLCJiYXNlVXJsIjoiaHR0cDovL2xvY2FsaG9zdDozMDMwL3YxIiwic2luZ2xlVXNlIjpmYWxzZSwiaWF0IjoxNTgzNDg2ODc1LCJleHAiOjE1ODQwOTE2NzV9.K_8tYQ3DROb2J2VG5qxHgoUDBl5o1-vh_kkwSKmG-yo`;
     const onLoadHandler = () => {
       console.log('frame load finished');
     }
@@ -55,6 +55,7 @@
       onLoad: onLoadHandler,
       height: 200, // opptional
       config: {
+        customerProductId: 2,
         customerReference:"my-custom-reference",
         prefill: {
           legalEntityName: 'Entifyme',

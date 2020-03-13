@@ -29,7 +29,10 @@ Each token has a lifetime of 7 days after which it becomes invalid and should be
 
 When creating the token, you need to supply a `referrer` parameter in the request body. This parameter should adhere to the [specification set forth by Google](https://developer.chrome.com/extensions/match_patterns). To prevent someone else using your SDK token to make requests and incurring charges, we recommend you set the `referrer` as strict as possible.
 
-> We have disallowed using the `<all_urls>` pattern and strongly discourage using `*://*/*` - the `referrer` flag prohibits the use of your SDK token outside of the URL you explicitly allow it on.
+> We have disallowed using the `<all_urls>` pattern and strongly discourage using `*://*/*` - the `referrer` flag prohibits the use of your SDK token outside of the URL you explicitly allow it on.  
+  
+You can generate a token specific to a product (Product is a bundle of features set), by passing `customerProductId` in the request body. In this case the product id **can't** be overridden by passing it in [SDK configuration](#sdk-configuration).    
+If the token is not associated to a product id (i.e. if you don't pass `customerProductId` in request body), the `customerProductId` must be passed to [SDK configuration](#sdk-configuration) while mounting.  
 
 ### Import SDK
 
@@ -48,7 +51,7 @@ window.entify.mount({
   onSuccess: () => console.log("The SDK flow has completed!"),
   onError: err => console.error(err),
   containerId: "root",
-  config: { ...customisation }
+  config: { ...configuration }
 });
 ```
 
@@ -75,7 +78,7 @@ Here's a sample of the object that will passed to your `onSuccess` callback:
 }
 ```
 
-### Customisation  
+### SDK Configuration  
 
 1. The `config` accepts a `prefill` object to pre-fill the SDK form. Only the following fields can be prefilled:
 Legal entity name, Registration code, Country, Representative first name & Representative last name.  
@@ -83,11 +86,16 @@ Legal entity name, Registration code, Country, Representative first name & Repre
 
 2. Pass any custom reference in `customerReference` to associate it with screenings and corresponding webhook payload.
 
-> Customisation available via `config` is form v2 and onwards.
+3. Pass product id `customerProductId` to mount the SDK with a specific product (Product is a bundle of features set). This is a **required**  field when the token is not associated with any `customerProductId` and you have multiple products enabled.  
+
+**Note:**  
+`customerProductId` - Only applicable If your **token is not associated with any customerProductId**
+
 
 Example:
 ```
 config: {
+  customerProductId: <your product id given by entify> *
   customerReference: <any reference id>,
   prefill: {
     legalEntityName: 'Entifyme',
