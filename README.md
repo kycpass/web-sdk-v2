@@ -2,7 +2,7 @@
 
 The Entify JS SDK allows seamless frontend integration with your website.
 
-[DEMO](https://web-sdk-v2.herokuapp.com/)
+[![Edit laughing-mclaren-pbml3](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/laughing-mclaren-pbml3?fontsize=14&hidenavigation=1&theme=dark)
 
 ### Prerequisite
 
