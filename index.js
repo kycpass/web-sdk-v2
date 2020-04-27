@@ -71,6 +71,7 @@ const sendToIframe = ({ eventType, data, targetOrigin = '*' }) =>{
 
 const setupListeners = (eventHandlers) => {
   window.addEventListener('message', ({data: { eventType, data }}) => {
+    console.log({data: { eventType, data }}, 'postMessage in sdk');
     // expecting an eventType < onSuccess|onError > from sdk frame
     const handler = eventHandlers[eventType];
     handler && handler(data);
