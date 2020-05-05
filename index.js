@@ -19,7 +19,7 @@ const mount = (params) => {
     height = 400,
     token
   } = params;
-
+  console.log(params, 'SDK');
   //to be send later when iframe is ready
   config = params.config || {};
 
@@ -50,7 +50,8 @@ const getiFrame = ({iFrameId, height, token, onLoad}) => {
     const ifrm = document.createElement('iframe');
     ifrm.setAttribute('id', iFrameId);
     ifrm.setAttribute('allow', 'microphone; camera');
-    ifrm.setAttribute('src', SDKFrameUrl(token));
+    ifrm.setAttribute('src', '/Users/martlumeste/KYC/github/web-sdk-iframe/dist/v3/index.html');
+    // ifrm.setAttribute('src', SDKFrameUrl(token));
     ifrm.style.width = '100%';
     ifrm.style.height = `${height}px`;
     ifrm.style.border = '0px';
@@ -72,6 +73,7 @@ const sendToIframe = ({ eventType, data, targetOrigin = '*' }) =>{
 const setupListeners = (eventHandlers) => {
   window.addEventListener('message', ({data: { eventType, data }}) => {
     // expecting an eventType < onSuccess|onError > from sdk frame
+    console.log({data: { eventType, data }}, 'callback from sdk');
     const handler = eventHandlers[eventType];
     handler && handler(data);
   })
