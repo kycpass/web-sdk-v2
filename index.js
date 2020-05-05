@@ -71,8 +71,7 @@ const sendToIframe = ({ eventType, data, targetOrigin = '*' }) =>{
 
 const setupListeners = (eventHandlers) => {
   window.addEventListener('message', ({data: { eventType, data }}) => {
-    // expecting an eventType < onSuccess|onError > from sdk framez
-    console.log({data: { eventType, data }}, 'SDK event')
+    // expecting an eventType < onSuccess|onError > from sdk frame
     const handler = eventHandlers[eventType];
     handler && handler(data);
   })
