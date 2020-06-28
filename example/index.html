@@ -7,6 +7,7 @@
       padding-left: 150px;
       font-family: monospace;
     }
+
     #sidebar {
       position: fixed;
       left: 0;
@@ -15,63 +16,85 @@
       height: 100%;
       background: #06103b;
     }
+
     #footer {
       padding: 30px;
       background: #f2f2f2;
     }
+
     #header {
       text-align: center;
-      height:30px;
+      height: 30px;
       background: #06103b;
       padding: 30px;
-      font-size:24px;
+      font-size: 24px;
     }
   </style>
   <div>
     <div id="sidebar"></div>
     <div id="header">
-        Entify SDK demo implementation
+      Entify SDK demo implementation
     </div>
     <div id="example"></div>
-    <div style="padding:20px;">
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-      Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+    <div style="padding: 20px;">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book. It has survived not only five centuries, but
+      also the leap into electronic typesetting, remaining essentially
+      unchanged. It was popularised in the 1960s with the release of Letraset
+      sheets containing Lorem Ipsum passages, and more recently with desktop
+      publishing software like Aldus PageMaker including versions of Lorem
+      Ipsum. Why do we use it? It is a long established fact that a reader will
+      be distracted by the readable content of a page when looking at its
+      layout. The point of using Lorem Ipsum is that it has a more-or-less
+      normal distribution of letters, as opposed to using 'Content here, content
+      here', making it look like readable English. Many desktop publishing
+      packages and web page editors now use Lorem Ipsum as their default model
+      text, and a search for 'lorem ipsum' will uncover many web sites still in
+      their infancy. Various versions have evolved over the years, sometimes by
+      accident, sometimes on purpose (injected humour and the like).
     </div>
-    <div id="footer">Check source on <a target="_blank" href="https://github.com/kycpass/web-sdk-v2">github</a></div>
+    <div id="footer">
+      Check source on
+      <a target="_blank" href="https://github.com/kycpass/web-sdk-v2">github</a>
+    </div>
   </div>
 </body>
 
-<script type="text/javascript">    
-    const token = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcklkIjoxLCJqdGkiOiI0MTY3NGVkYi03ZjRmLTRmYTgtYmU4NS1kZmEzOGJmNGZhYTEiLCJiYXNlVXJsIjoiaHR0cDovL2xvY2FsaG9zdDozMDMwL3YxIiwic2luZ2xlVXNlIjpmYWxzZSwiaWF0IjoxNTgzNDg2ODc1LCJleHAiOjE1ODQwOTE2NzV9.K_8tYQ3DROb2J2VG5qxHgoUDBl5o1-vh_kkwSKmG-yo`;
-    const onLoadHandler = () => {
-      console.log('frame load finished');
-    }
+<script type="text/javascript">
+  const token =
+    `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcklkIjoxLCJqdGkiOiJkOGM1OGE2Mi1mMDk4LTQ2NWQtYTljZi01MWZiNTkwYzdhZGYiLCJiYXNlVXJsIjoiaHR0cDovL2xvY2FsaG9zdDozMDMwL3YxIiwic2luZ2xlVXNlIjpmYWxzZSwiaWF0IjoxNTkyNDk4MTAyLCJleHAiOjE1OTMxMDI5MDJ9.ogNGDlWkP_XoQ2NqaGUuM_n8gR8X255Yf4HRxu7OV1Y`;
+  const onLoadHandler = () => {
+    console.log("frame load finished");
+  };
 
-    entify.mount({
-      containerId: "example",
-      token: token,
-      onSuccess: () => alert('SDK flow completed'),
-      onError: err => alert('ERROR from SDK - '+err.message),
-      onLoad: onLoadHandler,
-      height: 200, // opptional
-      config: {
-        customerProductId: 2,
-        customerReference:"my-custom-reference",
-        prefill: {
-          legalEntityName: 'Entifyme',
-          registrationCode: '111-111-111',
-          residenceCountry: 'IN',
-          residenceState: 'AL',
-          representativeFirstName: 'Mukesh',
-          representativeLastName: 'Biswas'
+  entify.mount({
+    containerId: "example",
+    token: token,
+    onSuccess: () => alert("SDK flow completed"),
+    onError: (err) => alert("ERROR from SDK - " + err.message),
+    onLoad: onLoadHandler,
+    height: 200, // opptional
+    config: {
+      customerProductId: 40,
+      customerReference: "my-custom-reference",
+      identityVariant: "selfie",
+      prefill: {
+        legalEntityName: "Entifyme",
+        registrationCode: "111-111-111",
+        residenceCountry: "IN",
+        residenceState: "AL",
+        representativeFirstName: "Mukesh",
+        representativeLastName: "Biswas",
+      },
+      translations: {
+        startScreening: {
+          legalEntity: {
+            title: "Company you want to verify:",
+          },
         },
-        translations: {
-          startScreening: {
-            legalEntity: {
-              title: "Company you want to verify:"
-            }
-          }
-        }
-      }
-    })
+      },
+    },
+  });
 </script>
